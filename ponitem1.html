@@ -78,7 +78,7 @@
     statusEl.className = 'text-sm font-semibold text-green-500';
   }
 } 
-     const suhuSensor = 30;
+     const suhuSensor = temperatureValue;
     updateTemperatureStatus(suhuSensor);
     </script>
     <div class="bg-white p-4 rounded-xl shadow text-center">
@@ -86,14 +86,46 @@
       <div class="text-2xl font-bold" id="phValue">7.2</div>
       <div id="phStatus" class="text-sm font-semibold text-green-500">Normal</div>
     </div>
-
+<script>//mengubah keadaanclassName
+ function updatepH(value) {
+      const statusE2 = document.getElementById("phStatus");
+  if (value < 24) {
+    statusE2.textContent = "Low";
+    statusE2.className = 'text-sm font-semibold text-blue-500';
+  } else if (value >= 28) {
+    statusE2.textContent = "High";
+    statusE2.className = 'text-sm font-semibold text-red-500';
+  } else {
+    statusE2.textContent = "Normal";
+    statusE2.className = 'text-sm font-semibold text-green-500';
+  }
+} 
+     const phSensor = phValue;
+    updatepHStatus(phSensor);
+    </script>
     <div class="bg-white p-4 rounded-xl shadow text-center">
       <div class="text-gray-500">Turbidity</div>
       <div class="text-2xl font-bold" id="turbidityValue">15 <span class="text-sm">NTU</span></div>
       <div id="turbidityStatus" class="text-sm font-semibold text-green-500">Normal</div>
     </div>
   </div>
-
+<script>//mengubah keadaanclassName
+ function updateTurbidityStatus(value) {
+      const statusE3 = document.getElementById("tubidityStatus");
+  if (value < 24) {
+    statusE3.textContent = "Low";
+    statusE3.className = 'text-sm font-semibold text-blue-500';
+  } else if (value >= 28) {
+    statusE3.textContent = "High";
+    statusE3.className = 'text-sm font-semibold text-red-500';
+  } else {
+    statusE3.textContent = "Normal";
+    statusE3.className = 'text-sm font-semibold text-green-500';
+  }
+} 
+     const turbiditySensor = turbidityValue;
+    updateTurbidityStatus(turbiditySensor);
+    </script>
   <!-- Combined Chart -->
   <div class="bg-white p-4 rounded-xl shadow mb-6">
     <div class="flex justify-between items-center mb-2">
