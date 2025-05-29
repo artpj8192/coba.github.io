@@ -150,10 +150,13 @@
         </div>
     </div>
         <script>
-          const API_URL = 'http://localhost:5000/api/data';
+         <script>
+        const API_URL = 'http://localhost:5000/api/data';
         const PREDICTION_API_URL = 'http://localhost:5000/api/predictive_maintenance';
-let phChart, turbidityChart, temperatureChart;
-async function fetchData() {
+
+        let phChart, turbidityChart, temperatureChart;
+
+        async function fetchData() {
             try {
                 const response = await fetch(API_URL);
                 const data = await response.json();
@@ -193,7 +196,8 @@ async function fetchData() {
                 console.error("Error fetching predictions:", error);
                 document.getElementById('predictions').innerHTML = '<p style="color: red;">Error fetching predictions.</p>';
             }
-        }</script>
+        }
+       </script>
   <!-- Chart.js -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>// Sidebar toggle
